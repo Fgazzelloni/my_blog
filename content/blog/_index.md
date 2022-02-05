@@ -1,7 +1,7 @@
 ---
-author: FG
+author: Federica Gazzelloni
 cascade:
-  author: FG
+  author: Federica Gazzelloni
   show_author_byline: true
   show_comments: true
   show_post_date: true
@@ -19,8 +19,8 @@ sidebar:
   author: Federica Gazzelloni
   description: "In here you'll find my data visualizations code with explanation\n"
   show_sidebar_adunit: true
-  text_link_label: Subscribe via RSS
-  text_link_url: /index.xml
+  text_link_label: github.com/Fgazzelloni
+  text_link_url: https://github.com/Fgazzelloni
   title: My Data Science Blog
 thumbnail_left: true
 title: Blog posts
