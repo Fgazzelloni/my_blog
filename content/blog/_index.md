@@ -17,11 +17,11 @@ show_post_date: true
 show_post_thumbnail: true
 sidebar:
   author: Federica Gazzelloni
-  description: "In here you'll find my blog's posts\n"
+  description: "In here you'll find my data visualizations code with explanation\n"
   show_sidebar_adunit: true
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
-  title: A blog under contruction
+  title: My Data Science Blog
 thumbnail_left: true
 title: Blog posts
 ---
