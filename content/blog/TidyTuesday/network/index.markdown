@@ -53,7 +53,10 @@ rat <- readRDS("ratings.rds")
 det <- readRDS("details.rds")
 ```
 
+### Variables
+<details>
 
+<summary>Let's see the variable's names inside the sets.</summary>
 
 ```r
 names(rat)
@@ -85,6 +88,8 @@ names(det)
 [23] "wishing"                
 ```
 
+</details>
+
 Based on the variables in the data sets, I've started googling for some information nad/or visualizations about Board games, to see if I could find any inspiration from past submissions, and in fact found this source of inspiration: https://www.thewayir.com/blog/boardgames/. Looking through the article found the code and the type of visualization I had in mind, so started replicating the code from the article. My surprise was that data updating and my manipulation slightly changed the output of the plot.
 
 Let's go a bit more in deep about that. I'll go through the steps for replicatiing the network but then sligtly change the output to what you can see in the picture.
@@ -93,7 +98,7 @@ Among the required libraries found [{widyr}](https://cran.r-project.org/web/pack
 
 > Encapsulates the pattern of untidying data into a wide matrix, performing some processing, then turning it back into a tidy form. This is useful for several operations such as co-occurrence counts, correlations, or clustering that are mathematically convenient.
 
-And then the other packages such as {igraph}, {ggraph}, and {ggforce}, all packages for making [**networks of data**](https://ggplot2-book.org/networks.html), and for making extra features.
+And then the other packages such as **{igraph}**, **{ggraph}**, and **{ggforce}**, all packages for making [**networks of data**](https://ggplot2-book.org/networks.html), and for making extra features.
 
 ```r
 require(widyr)
@@ -102,6 +107,14 @@ require(ggraph)
 require(ggforce)
 ```
 
+---
+
+### Data wrangling 
+<details>
+
+<summary>What's the best manipulation for making a graph?</summary>
+
+Here is the first part of the data-wrangling
 
 ```r
 board_games <- rat %>%
@@ -114,6 +127,7 @@ board_games <- rat %>%
          mechanic = gsub("^and ","",mechanic)) %>% 
   filter(!is.na(mechanic))
 ```
+
 
 
 ```r
@@ -162,18 +176,19 @@ kableExtra::kable(head(board_games))
 </tbody>
 </table>
 
+Here is the second part of the wrangling
 
 ```r
 mechanic <- board_games %>% 
   count(mechanic,sort=T) %>%
   mutate(mechanic_pct=round(n/sum(n)*100,2))%>%
-  #slice(1:30) %>%
   left_join(select(board_games,name,mechanic),by="mechanic") %>%
-   mutate(name=as.factor(name),mechanic=as.factor(mechanic)) %>% 
+  mutate(name=as.factor(name),mechanic=as.factor(mechanic)) %>% 
    distinct() 
 ```
 
 
+This part is for setting the fonts
 
 ```r
 library(extrafont)
@@ -187,8 +202,9 @@ font_add_google(name="Piedra",family="games")
 family = "games"
 ```
 
+</details>
 
-
+Select the first 50 games
 
 ```r
 board_games50 <-board_games%>%
@@ -198,15 +214,32 @@ board_games50 <-board_games%>%
 ```
 
 
+### Then finally make the plot.
+
+The interesting part is here: if we change the filtering level of the `mechanic_pct` and/or the `widyr::pairwise_cor()` from the `{widyr}` package we can see the graph changing along with it. More changes if the level of correlation changes to a lower value more than if set to a higher value.
 
 
 ```r
-plot <- board_games50%>%
+df <- board_games50%>%
   left_join(mechanic,by="name") %>%
-  filter(mechanic_pct >2 ) %>%
-   pairwise_cor(mechanic, name, sort = T) %>% 
-   filter(correlation > .15) %>% 
-  graph_from_data_frame() %>% 
+  filter(mechanic_pct > 1) %>%
+  pairwise_cor(mechanic, name, sort = T) %>% 
+  filter(correlation > .1)
+```
+
+The function  `igraph::graph_from_data_frame()` transform data frames into igraph graphs. In addition the funtion `igraph::tkplot()` can be useful for looking at the graph under different perspectives.
+
+
+
+
+
+
+
+This is the final version of the plot:
+
+```r
+plot <- df %>% 
+  igraph::graph_from_data_frame() %>% 
   ggraph() +
   geom_edge_link(linejoin = "round",
                  color="grey5",
@@ -223,7 +256,16 @@ plot <- board_games50%>%
   theme_void() +
    theme(text = element_text(family=family),
          plot.background = element_rect(color="beige",fill="beige"))
+```
 
+</details>
+
+### Final touches with {cowplot} and ggsave()
+<details>
+
+<summary>Adding some features and save</summary>
+
+```r
 library(cowplot)
 
 final <-ggdraw()+
@@ -236,8 +278,10 @@ final <-ggdraw()+
   draw_label("DataSource: Kaggle & Board Games Geek | Viz: Federica Gazzelloni",
              x=0.8,y=0.03,angle=0,size=11,alpha=0.5,fontfamily=family) +
    draw_image("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/static/plot_logo.png",x=0.09,y=-0.47,scale=0.05)
-  
+```
 
+
+```r
 ggsave("w4_board_games.png",
         plot =final,
         bg="white",
@@ -247,4 +291,11 @@ ggsave("w4_board_games.png",
        )
 ```
 
+</details>
+
+### Resources:
+
+- [tidygraph](https://tidygraph.data-imaginist.com/index.html)
+- [igraph](https://igraph.org/)
+- [ggnet](https://briatte.github.io/ggnet/)
 

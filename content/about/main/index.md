@@ -2,7 +2,7 @@
 ## Configure page content in wide column
 title: "What is Data Science?" # leave blank to exclude
 number_featured: 1 # pulling from mainSections in config.toml
-use_featured: false # if false, use most recent by date
+use_featured: true # if false, use most recent by date
 number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: Do you love maths and statistics? Well, that's all about that. You might need to have some computer skills as well but that's all that it takes for you to start *investigating* real world data. One more thing to say, you'll learn how to make beautiful visualizations of your data.

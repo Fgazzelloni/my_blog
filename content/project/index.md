@@ -1,14 +1,14 @@
-m---
+---
 author: Federica Gazzelloni
 categories:
 - On going projects
-date: "2021-01-28"
+date: "2022-02-05"
 draft: false
 excerpt:  
 layout: single
 subtitle: In this section you'll find the projects I am working on
-title: On going projects
+title: Projects I am working on
 ---
 
 
-## In this section you'll find some modeling
+## ... and some modeling
