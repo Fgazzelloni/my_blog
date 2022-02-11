@@ -16,15 +16,19 @@ layout: single
 
 ## Overview
 
+
+This #TidyTuesday post is all about drawing with R.
+I have replicated the dogs' prints (or paws) using R. For solving this kind of tasks you need to be very "practice" with functions outcomes. And this means to have in mind the shape the function will take. For example we know that `\(y = x^2\)` would shape a parabolic function.
+
+So that, I decided to get some extra inspiration and used the `ggforce::geom_ellipse()` function to produce ellipses of different sizes.
+
+
+
+
+
 ![](featured.png)
 
-
-```r
-library(tidyverse)
-```
-
-
-Dog breeds datasets, load the data
+The data set for this week #TidyTuesday contains **Dog breeds** information, in three datasets.To load the data:
 
 ```r
 breed_traits <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_traits.csv')
@@ -32,7 +36,11 @@ trait_description <- readr::read_csv('https://raw.githubusercontent.com/rfordata
 breed_rank_all <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_rank.csv')
 ```
 
-Make a rank dataset to see which breed is favourite in 2020
+#### Data Wrangling
+
+A bit of data wrangling to make a rank dataset and see which are the 2020 favourite breeds.
+
+<details>
 
 ```r
 rank<-breed_rank_all%>%
@@ -63,6 +71,9 @@ my_df <-breed_traits%>%
 ```
 
 
+</details>
+
+#### Set some extrafonts:
 
 
 ```r
@@ -78,7 +89,7 @@ family = "dogs"
 ```
 
 
-To make the plot, use:
+#### And finally, make the plot, use:
 
 - ggforce::geom_ellipse to make the paws
 - ggimage::geom_image to add the images
@@ -137,7 +148,7 @@ dog_prints_plot <-
         legend.position = "none")
 ```
 
-Add extra images and save it
+#### Add extra images and save it
 
 ```r
 library(cowplot)
@@ -149,3 +160,8 @@ final <- ggdraw()+
 
 ggsave("dog_prints_plot.png",final)
 ```
+
+
+## Resources:
+
+- [plotting-math-functions-in-r](https://steemit.com/programming/@dkmathstats/plotting-math-functions-in-r)
