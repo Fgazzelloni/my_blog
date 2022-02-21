@@ -23,6 +23,7 @@ This week is all about **#DuBoisChallenge2022**, I choose plate number 6.
 library(tidyverse)
 ```
 
+![](featured.png)
 
 ### Load #TidyTuesday 2022/07 data
 
