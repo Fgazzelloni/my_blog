@@ -6,4 +6,4 @@ blogdown::serve_site()
 # after have made some changes
 # pull, commit and push to GitHub
 
-# 
+# cmd + a (select all commits)
