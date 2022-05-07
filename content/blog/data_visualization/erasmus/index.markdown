@@ -45,22 +45,85 @@ df <- erasmus%>%
          academic_year,mobility_duration,
          participant_gender)
 
-head(df)
+kableExtra::kable(head(df)) 
 ```
 
-```
-## # A tibble: 6 × 8
-##   sending_country_code receiving_country_code participant_national… participants
-##   <chr>                <chr>                  <chr>                        <dbl>
-## 1 AT                   AT                     AT                               2
-## 2 AT                   AT                     AT                               3
-## 3 AT                   AT                     AT                               3
-## 4 AT                   AT                     AT                               4
-## 5 AT                   AT                     AT                               2
-## 6 AT                   AT                     AT                               2
-## # … with 4 more variables: participant_age <dbl>, academic_year <chr>,
-## #   mobility_duration <dbl>, participant_gender <chr>
-```
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> sending_country_code </th>
+   <th style="text-align:left;"> receiving_country_code </th>
+   <th style="text-align:left;"> participant_nationality </th>
+   <th style="text-align:right;"> participants </th>
+   <th style="text-align:right;"> participant_age </th>
+   <th style="text-align:left;"> academic_year </th>
+   <th style="text-align:right;"> mobility_duration </th>
+   <th style="text-align:left;"> participant_gender </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Female </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Female </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Female </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Male </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Male </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:left;"> AT </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> 2014-2015 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Male </td>
+  </tr>
+</tbody>
+</table>
 
 Looking at the `participant_age` we see that we have some misleading data:
 
@@ -159,19 +222,12 @@ df <- df %>%
   ungroup() %>%
   select(-m_participants) %>%
   distinct()
-head(df)
+kableExtra::kable(head(df))%>%
+  kable_styling(latex_options = "scale_down")
 ```
 
 ```
-# A tibble: 6 × 4
-  academic_year sending_country_code receiving_country_code participant_gender
-  <chr>         <chr>                <chr>                  <chr>             
-1 2014-2015     RS                   BG                     Male              
-2 2014-2015     BG                   BG                     Female            
-3 2014-2015     ES                   BG                     Female            
-4 2014-2015     BG                   BG                     Male              
-5 2014-2015     EL                   BG                     Female            
-6 2014-2015     EL                   BG                     Male              
+Error in kable_styling(., latex_options = "scale_down"): could not find function "kable_styling"
 ```
 
 
@@ -361,7 +417,7 @@ erasmus_network%>%
   theme_void()
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/er19-1.png" width="672" />
+![plot of chunk er19](figure/er19-1.png)
 
 Or a simplified version:
 
@@ -436,7 +492,7 @@ ggplot(erasmus_network2,
         panel.background = element_rect(color="black",fill="black"))
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/er21-1.png" width="672" />
+![plot of chunk er21](figure/er21-1.png)
 
 Here is the final part of this post, I set the spatials for making a map visualizaton of the sending to receiving countries.
 
@@ -487,4 +543,4 @@ ggplot(geo_full2)+
   theme(legend.position = "none")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/er25-1.png" width="672" />
+![plot of chunk er25](figure/er25-1.png)

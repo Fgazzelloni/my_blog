@@ -36,7 +36,7 @@ erasmus <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 
 
 The set is made of information about students, such as the age, the nationality, the lenght of stay, the gender, academic year, and others. I selected some of them, to extract the information I needed to make the network. 
-```{r er03}
+```{r er03, comment = ""}
 df <- erasmus%>%
   select(sending_country_code,receiving_country_code,
          participant_nationality,participants,
@@ -44,7 +44,7 @@ df <- erasmus%>%
          academic_year,mobility_duration,
          participant_gender)
 
-head(df)
+kableExtra::kable(head(df)) 
 ```
 
 Looking at the `participant_age` we see that we have some misleading data:
@@ -89,7 +89,8 @@ df <- df %>%
   ungroup() %>%
   select(-m_participants) %>%
   distinct()
-head(df)
+kableExtra::kable(head(df))%>%
+  kable_styling(latex_options = "scale_down")
 ```
 
 
