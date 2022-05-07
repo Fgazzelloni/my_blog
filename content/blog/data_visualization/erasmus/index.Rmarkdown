@@ -13,7 +13,7 @@ layout: single
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval=T)
+knitr::opts_chunk$set(echo = TRUE,eval=T,comment = "")
 ```
 
 
