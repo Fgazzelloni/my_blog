@@ -14,7 +14,7 @@ layout: list-sidebar
 sidebar: 
   title: My Data Science Blog
   description: |
-     "In here you'll find my data visualizations code with explanation\n"
+     "In here you'll find my data visualizations code with explanation"
 
   author: Federica Gazzelloni
   text_link_label: Contact
