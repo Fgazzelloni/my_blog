@@ -7,7 +7,7 @@ draft: false
 excerpt:  
   layout: single
 subtitle: In this section you'll find the statistical techniques I am working on.
-title: Techniques I am working on
+title: Statistical Techniques
 ---
 
 
