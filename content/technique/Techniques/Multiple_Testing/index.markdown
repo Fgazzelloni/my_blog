@@ -1,6 +1,6 @@
 ---
-title: "Multiple Testing"
-excerpt: "summary"
+title: "Multiple Hypothesis Testing"
+excerpt: "summary of what is it and how to use it"
 date: 2022-05-20
 author: "Federica Gazzelloni"
 draft: false
@@ -23,9 +23,8 @@ Sometimes answering a research question means evaluating the different combinati
 The following are the fundamental steps for understanding how to proceed when multiple hypothesis testing is needed.
 
 
-The picture 
-
-![](featured.png,credits:Hypothesis Testing On Linear Regression-medium.com )
+Image credits: Hypothesis Testing On Linear Regression-medium.com  
+![](featured.png)
 
 
 
