@@ -101,18 +101,18 @@ enableEmoji = true
   #    icon      = "instagram" # icon name without the 'fa-'
   #    icon_pack = "fab"
   #    url       = "https://www.instagram.com/explore/tags/apero/"    
-  #[[params.social]]
-  #    icon      = "impactstory" # icon name without the 'fa-'
-  #    icon_pack = "ai"
-  #    url       = "https://impactstory.org/u/0000-0002-8082-1890"
+  [[params.social]]
+      icon      = "linkedin-in" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://www.linkedin.com/in/fgazzelloni"
   #[[params.social]]
   #    icon      = "orcid" # icon name without the 'fa-'
   #    icon_pack = "ai"
   #    url       = "http://orcid.org/0000-0002-8082-1890"
-  [[params.social]]
-      icon      = "rss" # icon name without the 'fa-'
-      icon_pack = "fas"
-      url       = "/blog/index.xml"
+  #[[params.social]]
+  #    icon      = "rss" # icon name without the 'fa-'
+  #    icon_pack = "fas"
+  #    url       = "/blog/index.xml"
 
 [taxonomies]
   category = "categories"
@@ -131,26 +131,31 @@ enableEmoji = true
     title = "Blog"
     url = "/blog/"
     weight = 2
+   [[menu.header]]
+    name = "Techniques"
+    title = "Statistical Techniques"
+    url = "/technique/"
+    weight = 3  
   [[menu.header]]
     name = "Projects"
     title = "Project Portfolio"
     url = "/project/"
-    weight = 3
+    weight = 4
   #[[menu.header]]
   #  name = "Talks"
   #  title = "Talks"
   #  url = "/talk/"
-  #  weight = 4
+  #  weight = 5
   #[[menu.header]]
   #  name = "A collection"
   #  title = "A collection"
   #  url = "/collection/"
-  #  weight = 5
+  #  weight = 6
   #[[menu.header]]
   #  name = "Elements"
   #  title = "Element Page"
   #  url = "/elements/"
-  #  weight = 6
+  #  weight = 7
     
   # Configure footer  
   [[menu.footer]]
