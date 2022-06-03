@@ -33,7 +33,8 @@ enableEmoji = true
   description = "This Blog is made for sharing my data analytics projects."
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
-  mainSections = ["blog", "project", "talk"]
+  # modified mainSections with technique instead of talk
+  mainSections = ["blog", "project", "technique"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
