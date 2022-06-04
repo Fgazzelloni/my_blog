@@ -8,7 +8,7 @@ number_featured: 1 # pulling from mainSections in config.toml
 use_featured: false # if false, use most recent by date
 
 # for featured categories in the ABOUT section
-number_categories: 2 # set to zero to exclude
+number_categories: 0 # set to zero to exclude
 
 show_intro: true
 intro: Do you love maths and statistics? Well, that's all about that. You might need to have some computer skills as well but that's all that it takes for you to start *investigating* real world data. One more thing to say, you'll learn how to make beautiful visualizations of your data.

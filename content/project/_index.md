@@ -9,7 +9,7 @@ draft: false
 layout: single
 # modified On going projects with Projects
 categories:
-- On going projects 
+- projects 
 ---
 
 
