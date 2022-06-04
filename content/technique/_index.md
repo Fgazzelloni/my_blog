@@ -6,7 +6,7 @@ author: Federica Gazzelloni
 
 # modified category's name
 categories:
-  - technique
+  - Techniques
 date: "2022-02-05"
 draft: false
 excerpt:  

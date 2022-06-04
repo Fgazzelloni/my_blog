@@ -33,7 +33,6 @@ cascade:
     text_link_url: /blog/
     show_sidebar_adunit: false
     
-    
 
 #layout: list-sidebar
 #show_author_byline: true

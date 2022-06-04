@@ -7,7 +7,7 @@ draft: false
 images:
 series:
 tags:
-categories:
+categories: 
 layout: single
 ---
 

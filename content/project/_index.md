@@ -1,14 +1,15 @@
 ---
-title: Projects I am working on
-subtitle: In this section you'll find the projects I am working on
-author: Federica Gazzelloni
+title: "Projects I am working on"
+subtitle: "In this section you'll find the projects I am working on"
+excerpt: "You can have a look at my GitHub repo: Fgazzelloni for some of the projects."
+date: 2022-02-05
+author: "Federica Gazzelloni"
+draft: false
+# layout options: single, single-sidebar 
+layout: single
 # modified On going projects with Projects
 categories:
-  - Projects
-date: "2022-02-05"
-draft: false
-excerpt:  
-  layout: single
+- On going projects 
 ---
 
 
