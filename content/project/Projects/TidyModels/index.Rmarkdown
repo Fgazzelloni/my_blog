@@ -133,13 +133,6 @@ Resource: [Practical Machine Learning](https://github.com/DataScienceSpecializat
 
 ## Caret or TidyModels?
 
-
-```{r, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Caret vs TidyModels"}
-knitr::include_graphics(
-  c("images/caret.png",
-    "images/tidymodels.png")
-)
-```
 [Caret](http://caret.r-forge.r-project.org/)
 [Tidymodels](https://www.tidymodels.org/start/models/)
 
@@ -194,9 +187,4 @@ cm
 autoplot(cm)
 ```
 
-```{r, echo=FALSE, out.width="50%", fig.align = "center", fig.show='hold', fig.cap="Caret vs TMWR confusion matrix plot"}
-knitr::include_graphics(
-  c("images/caret_cm.png",
-    "images/tmwr_cm.png")
-)
-```
+

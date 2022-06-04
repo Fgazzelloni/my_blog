@@ -8,7 +8,8 @@ draft: false
 # layout options: single, single-sidebar 
 layout: single
 # modified On going projects with Projects
-
+categories: 
+ - projects
 ---
 
 

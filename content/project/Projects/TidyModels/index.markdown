@@ -8,6 +8,7 @@ images:
 series:
 tags:
 categories: 
+- projects
 layout: single
 ---
 
