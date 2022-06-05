@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.79.1" />
+<title>Statistics | Data Science Blog</title>
+
+
+<meta property="twitter:site" content="@fgazzelloni">
+<meta property="twitter:creator" content="@fgazzelloni">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="#30DayChartChallenge 2022 #Day9 Statistics">
+
+
+<meta property="og:site_name" content="Data Science Blog">
+<meta property="og:title" content="Statistics | Data Science Blog">
+<meta property="og:description" content="#30DayChartChallenge 2022 #Day9 Statistics" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/featured.png" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/featured.png" >
+    
+    
+  <meta itemprop="name" content="Statistics">
+<meta itemprop="description" content="Overview     This is one of my favourite visualizations. It looks like very simple, and straight forward with the use of the ggdist::stat_dots function to make dotted ditributions of the wages by highest educational status reached.
+The Tidyverse libraries needed for the data manipulation:
+library(tidyverse) The data set is the Wage dataset from the {ISLR2} package. This package contains a variety of datasets used for statistical analysis in An Introduction to Statistical Learning book.">
+<meta itemprop="datePublished" content="2022-04-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="314">
+<meta itemprop="image" content="https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/featured.png">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.b9039fe8b2640ff0b042d1429495fee9c0ad39b715c0a293fb450450524531df.css" integrity="sha256-uQOf6LJkD/CwQtFClJX&#43;6cCtObcVwKKT&#43;0UEUFJFMd8=" media="screen">
+  
+  
+  <script src="/panelset.min.41f62c42d5f25dd80e81136866f4f1baa1bc17669edfd002e75c0e107953789b.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.07ec8e08cbb63db3a2cf7d4a7df6f7be00c715f13b64d8df6a2c48441ba8b14b.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container single">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://federicagazzelloni.netlify.app/" title="Home">
+      <img src="/img/blogophonic-mark-dark.png" class="dib db-l h2 w-auto" alt="Data Science Blog">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About my blog">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/technique/" title="Statistical Techniques">Techniques</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Projects</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+<main class="page-main pa4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Statistics</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Federica Gazzelloni</p>
+        <p class="f7 db mv0 ttu">April 9, 2022</p>
+
+      
+
+      </header>
+      <section class="post-body pt5 pb4">
+        
+
+
+
+<h2 id="overview">Overview
+  <a href="#overview"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>This is one of my favourite visualizations. It looks like very simple, and straight forward with the use of the ggdist::stat_dots function to make dotted ditributions of the wages by highest educational status reached.</p>
+<p><img src="featured.png" alt=""></p>
+<p>The Tidyverse libraries needed for the data manipulation:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#900;font-weight:bold">library</span>(tidyverse)
+</code></pre></div><p>The data set is the Wage dataset from the 
+<a href="https://www.statlearning.com/" target="_blank" rel="noopener">{ISLR2}</a> package.
+This package contains a variety of datasets used for statistical analysis in An Introduction to Statistical Learning book.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#900;font-weight:bold">library</span>(ISLR2)
+<span style="color:#900;font-weight:bold">data</span>(Wage)
+wage_h <span style="color:#000;font-weight:bold">&lt;-</span> Wage<span style="color:#000;font-weight:bold">%&gt;%</span><span style="color:#900;font-weight:bold">group_by</span>(education)<span style="color:#000;font-weight:bold">%&gt;%</span><span style="color:#900;font-weight:bold">summarize</span>(avg_wage<span style="color:#000;font-weight:bold">=</span><span style="color:#900;font-weight:bold">mean</span>(wage))
+kableExtra<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">kable</span>(wage_h,row.names <span style="color:#000;font-weight:bold">=</span> <span style="color:#999">F</span>)
+</code></pre></div><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> education </th>
+   <th style="text-align:right;"> avg_wage </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1. &lt; HS Grad </td>
+   <td style="text-align:right;"> 84.10441 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2. HS Grad </td>
+   <td style="text-align:right;"> 95.78335 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3. Some College </td>
+   <td style="text-align:right;"> 107.75557 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4. College Grad </td>
+   <td style="text-align:right;"> 124.42791 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5. Advanced Degree </td>
+   <td style="text-align:right;"> 150.91778 </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+<h4 id="data-wrangling">Data Wrangling
+  <a href="#data-wrangling"></a>
+</h4>
+<p>A bit of data wrangling to group by education and calculate the mean value and the standard deviation of the wage.</p>
+<details>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Wage1 <span style="color:#000;font-weight:bold">&lt;-</span> Wage <span style="color:#000;font-weight:bold">%&gt;%</span>
+  <span style="color:#900;font-weight:bold">mutate</span>(education<span style="color:#000;font-weight:bold">=</span><span style="color:#900;font-weight:bold">gsub</span>(<span style="color:#d14">&#34;\\d. &#34;</span>,<span style="color:#d14">&#34;&#34;</span>,education)) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#998;font-style:italic">#count(year)</span>
+  <span style="color:#900;font-weight:bold">group_by</span>(education)<span style="color:#000;font-weight:bold">%&gt;%</span>
+  <span style="color:#900;font-weight:bold">mutate</span>(mean<span style="color:#000;font-weight:bold">=</span><span style="color:#900;font-weight:bold">mean</span>(wage),
+         sd<span style="color:#000;font-weight:bold">=</span><span style="color:#900;font-weight:bold">sd</span>(wage)) <span style="color:#000;font-weight:bold">%&gt;%</span>
+  <span style="color:#900;font-weight:bold">ungroup</span>() <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#998;font-style:italic"># pull(mean)%&gt;%summary</span>
+  <span style="color:#900;font-weight:bold">select</span>(education,mean,sd) <span style="color:#000;font-weight:bold">%&gt;%</span>
+  <span style="color:#900;font-weight:bold">distinct</span>()
+</code></pre></div></details>
+
+
+
+
+<h4 id="set-some-extrafonts">Set some extrafonts:
+  <a href="#set-some-extrafonts"></a>
+</h4>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#900;font-weight:bold">library</span>(extrafont)
+<span style="color:#998;font-style:italic"># loadfonts()</span>
+</code></pre></div><p>For this visualization I used: family = &ldquo;Chelsea Market&rdquo;</p>
+
+
+
+
+<h4 id="and-finally-to-make-the-plot-use">And finally, to make the plot, use:
+  <a href="#and-finally-to-make-the-plot-use"></a>
+</h4>
+<ul>
+<li>ggdist::stat_dots to make the dots ditribution</li>
+<li>distributional::dist_normal to normalize the data</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#900;font-weight:bold">library</span>(ggdist)
+<span style="color:#900;font-weight:bold">library</span>(distributional)
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Wage1 <span style="color:#000;font-weight:bold">%&gt;%</span>
+<span style="color:#900;font-weight:bold">ggplot</span>(<span style="color:#900;font-weight:bold">aes</span>(y<span style="color:#000;font-weight:bold">=</span><span style="color:#900;font-weight:bold">fct_reorder</span>(education,mean),
+             xdist <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">dist_normal</span>(mean, sd),
+             layout <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;weave&#34;</span>,
+             fill <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">stat</span>(x <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">111.70</span>))) <span style="color:#000;font-weight:bold">+</span> 
+  <span style="color:#900;font-weight:bold">stat_dots</span>(position <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;dodge&#34;</span>, color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;grey70&#34;</span>)<span style="color:#000;font-weight:bold">+</span>
+  <span style="color:#900;font-weight:bold">geom_vline</span>(xintercept <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">111.70</span>, alpha <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0.25</span>) <span style="color:#000;font-weight:bold">+</span>
+  <span style="color:#900;font-weight:bold">scale_x_continuous</span>(breaks <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">20</span>,<span style="color:#099">60</span>,<span style="color:#099">90</span>,<span style="color:#099">112</span>,<span style="color:#099">140</span>,<span style="color:#099">180</span>,<span style="color:#099">220</span>)) <span style="color:#000;font-weight:bold">+</span>
+  tvthemes<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">scale_fill_hilda</span>()<span style="color:#000;font-weight:bold">+</span>
+  <span style="color:#998;font-style:italic"># add a title / subtitle and a caption ------</span>
+  <span style="color:#900;font-weight:bold">labs</span>(x<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;Wage values from 2003 to 2009&#34;</span>,
+       y<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;&#34;</span>,color<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;Race&#34;</span>,fill<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;wage &lt; avg&#34;</span>,
+       title<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;Wage distribution vs education 2003-2009&#34;</span>,
+       subtitle<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;Normalized values&#34;</span>,
+       caption<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;#30DayChartChallenge 2022 #day9 - Distribution/Statistics - v2\nDataSource: {ISLR2} Wage dataset | DataViz: Federica Gazzelloni&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
+  <span style="color:#998;font-style:italic"># set a customized theme -------</span>
+  tvthemes<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">theme_avatar</span>() <span style="color:#000;font-weight:bold">+</span>
+  <span style="color:#900;font-weight:bold">theme</span>(text <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">element_text</span>(family<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;Chelsea Market&#34;</span>),
+        legend.background <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">element_blank</span>(),
+        legend.box.background <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">element_blank</span>(),
+        legend.key <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">element_blank</span>(),
+        legend.key.width <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">unit</span>(<span style="color:#099">0.5</span>,units<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;cm&#34;</span>),
+        legend.direction <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;horizontal&#34;</span>,
+        legend.position <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">0.8</span>,<span style="color:#099">0.1</span>))
+</code></pre></div><p>If you&rsquo;d like to save it as .png you can do it with <code>ggsave()</code></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#900;font-weight:bold">ggsave</span>(<span style="color:#d14">&#34;day9_statistics_v2.png&#34;</span>,
+       dpi<span style="color:#000;font-weight:bold">=</span><span style="color:#099">320</span>,
+       width <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">9</span>,
+       height <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">6</span>)
+</code></pre></div>
+
+
+
+<h2 id="resources">Resources:
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<ul>
+<li>
+<a href="https://www.statlearning.com/" target="_blank" rel="noopener">An Introduction to Statistical Learning</a></li>
+</ul>
+
+        
+        <details closed class="f6 fw7 input-reset">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">April 9, 2022</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">2 minute read, 314 words</dd>
+  </dl>
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+  </dl>
+</details>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="https://federicagazzelloni.netlify.app/blog/data_visualization/erasmus/">Erasmus students exchange &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+      
+<div class="post-comments pa0 pa4-l mt4">
+  
+  <script src="https://utteranc.es/client.js"
+          repo="Fgazzelloni/my_blog"
+          issue-term="pathname"
+          theme="boxy-light"
+          label="comments :crystal_ball:"
+          crossorigin="anonymous"
+          async
+          type="text/javascript">
+  </script>
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022 RStudio, Anywhere
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/Fgazzelloni/my_blog" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/Fgazzelloni" title="twitter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.linkedin.com/in/fgazzelloni" title="linkedin-in" target="_blank" rel="noopener">
+      <i class="fab fa-linkedin-in fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Federica Gazzelloni on Data Science Blog</title>
+    <link>https://federicagazzelloni.netlify.app/</link>
+    <description>Recent content in Federica Gazzelloni on Data Science Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predictive modeling</title>
+      <link>https://federicagazzelloni.netlify.app/project/projects/tidymodels/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/project/projects/tidymodels/</guid>
+      <description>Predictive modeling     This post is dedicated to make a comparison between Caret and TidyModels R packages. Data modeling with R pass through data preprocessing and parameters assessments to predicting an outcome. Both set of packages can be used to acheive same results, with the purpose of finding the best predictive performance for data specifc models.
+The Caret package is the starting point for understanding how to manage models and produce unbiases predictions with R.</description>
+    </item>
+    
+    <item>
+      <title>Set up your projects</title>
+      <link>https://federicagazzelloni.netlify.app/project/projects/projects_set_up/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/project/projects/projects_set_up/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiple Hypothesis Testing</title>
+      <link>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</guid>
+      <description>Overview     Multiple testing a mistery explained.
+Sometimes answering a research question means evaluating the different combinations of predictors, and this is the case when multiple hypothesis testing is made.
+The following are the fundamental steps for understanding how to proceed when multiple hypothesis testing is needed.
+Image credits: Hypothesis Testing On Linear Regression-medium.com
+library(tidyverse)  Research questions   In general, hypothesis testing is made for comparing the expected values of two predictors which are the key drivers for explaining the trend of certain variables that re depending on the levels of those predictors.</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/</guid>
+      <description>Overview     This is one of my favourite visualizations. It looks like very simple, and straight forward with the use of the ggdist::stat_dots function to make dotted ditributions of the wages by highest educational status reached.
+The Tidyverse libraries needed for the data manipulation:
+library(tidyverse) The data set is the Wage dataset from the {ISLR2} package. This package contains a variety of datasets used for statistical analysis in An Introduction to Statistical Learning book.</description>
+    </item>
+    
+    <item>
+      <title>Erasmus students exchange</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/erasmus/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/erasmus/</guid>
+      <description>Overview     This week 10 of #TidyTuesday 2022 theme is #Erasmus students exchange in the European countries.
+The data set is from Erasmus student mobility, Data.Europa.eu and Wimdu.co to discover the most popular Erasmus destinations.
+The idea is to make a network of sending and receiving countries, let&amp;rsquo;s have a look at the data.
+if(!require(pacman)) install.packages(&amp;#34;pacman&amp;#34;) pacman::p_load(tidyverse, ggbump, cowplot, wesanderson) erasmus &amp;lt;- readr::read_csv(&amp;#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-08/erasmus.csv&amp;#39;) The set is made of information about students, such as the age, the nationality, the lenght of stay, the gender, academic year, and others.</description>
+    </item>
+    
+    <item>
+      <title>DuBois Challenge 2022</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/dubois/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/dubois/</guid>
+      <description>Overview   This week is all about #DuBoisChallenge2022, I choose plate number 6.
+library(tidyverse) Load #TidyTuesday 2022/07 data     plate6 &amp;lt;- read_csv(&amp;#39;https://raw.githubusercontent.com/ajstarks/dubois-data-portraits/master/challenge/2022/challenge06/data.csv&amp;#39;)  Add a column with distances     df &amp;lt;- plate6 %&amp;gt;% janitor::clean_names() %&amp;gt;% mutate(x_axis=c(1860,1860-cumsum(diff(iliteracy_rate)))) df  Create axis lables vectors     iliteracy_rate&amp;lt;-df$iliteracy_rate x_axis &amp;lt;-df$x_axis  Fonts     library(showtext) font_add(family = &amp;#34;Public Sans Thin&amp;#34;, regular = &amp;#34;PublicSans-Thin.</description>
+    </item>
+    
+    <item>
+      <title>Dog breeds</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/dogbreeds/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/dogbreeds/</guid>
+      <description>Overview     This #TidyTuesday post is all about drawing with R. I have replicated the dogs&#39; prints (or paws) using R. For solving this kind of tasks you need to be very &amp;ldquo;practice&amp;rdquo; with functions outcomes. And this means to have in mind the shape the function will take. For example we know that \(y = x^2\) would shape a parabolic function.
+So that, I decided to get some extra inspiration and used the ggforce::geom_ellipse() function to produce ellipses of different sizes.</description>
+    </item>
+    
+    <item>
+      <title>Network of game mechanics</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/network/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/network/</guid>
+      <description>Overview     I&amp;rsquo;ve chosen this graphic for my blog because it turned out to be very interesting. As you can see reading through the article, the shape of the network changes along with the change of the parameters.
+The dataset I&amp;rsquo;ve used for making this network comes from  #TidyTuesday 2022 week 4 Board games.
+The picture below is the result of the network visualization.
+The first step is to load the library needed for making the manupulations.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://federicagazzelloni.netlify.app/contact/</link>
+      <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/contact/</guid>
+      <description>Please use the my socials for any questions:
+  GithHub repo  LinkedIn  Twitter  </description>
+    </item>
+    
+    <item>
+      <title>Contributors</title>
+      <link>https://federicagazzelloni.netlify.app/contributors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/contributors/</guid>
+      <description>Thank you to all the folks who have contributed both technical and creative skills to this project, please make suggestions by submitting an issue:
+  GithHub repo  </description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://federicagazzelloni.netlify.app/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/license/</guid>
+      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.
+  </description>
+    </item>
+    
+  </channel>
+</rss>

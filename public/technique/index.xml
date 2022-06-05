@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistical Techniques on Data Science Blog</title>
+    <link>https://federicagazzelloni.netlify.app/technique/</link>
+    <description>Recent content in Statistical Techniques on Data Science Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/technique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multiple Hypothesis Testing</title>
+      <link>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</guid>
+      <description>Overview     Multiple testing a mistery explained.
+Sometimes answering a research question means evaluating the different combinations of predictors, and this is the case when multiple hypothesis testing is made.
+The following are the fundamental steps for understanding how to proceed when multiple hypothesis testing is needed.
+Image credits: Hypothesis Testing On Linear Regression-medium.com
+library(tidyverse)  Research questions   In general, hypothesis testing is made for comparing the expected values of two predictors which are the key drivers for explaining the trend of certain variables that re depending on the levels of those predictors.</description>
+    </item>
+    
+  </channel>
+</rss>
