@@ -16,7 +16,7 @@ layout: single
 
 ## Overview
 
-*Multiple testing* a mistery explained.
+*Multiple testing*, what does it means?
 
 Sometimes answering a research question means evaluating the different combinations of predictors, and this is the case when multiple hypothesis testing is made.
 
