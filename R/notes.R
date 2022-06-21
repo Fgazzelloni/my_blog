@@ -15,3 +15,6 @@ blogdown::stop_server()
 ## ---- COMMENTS -----
 # in the config.toml file 
 # baseURL = "/" need to be left like is
+# RSS feeds are in "public" folder
+# ????make sure ‘RSS’ is listed in our outputs within your config.toml file.
+# added the link to the blog site in the config.toml
