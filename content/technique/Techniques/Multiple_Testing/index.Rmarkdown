@@ -36,7 +36,7 @@ library(tidyverse)
 
 # Research questions
 
-In general, hypothesis testing is made for comparing the expected values of two predictors which are the key drivers for explaining the trend of certain variables that re depending on the levels of those predictors.
+In general, hypothesis testing is made for comparing the expected values of two predictors which are the key drivers for explaining the trend of certain variables that are depending on the levels of those predictors.
 
 Going into more detail, making a real-life example, we might need to evaluate the influence of gender and age on the increase of heart diseases. Under this specification, simple questions to be answered would be:
 
@@ -102,5 +102,6 @@ To be continued...
 ### Resources:
 
 - [HeartDisease](https://cran.r-project.org/web/packages/cheese/vignettes/cheese.html) dataset
+- [Multiple Testing - Washington](https://www.gs.washington.edu/academics/courses/akey/56008/lecture/lecture10.pdf)
 
 
