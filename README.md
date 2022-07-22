@@ -1,5 +1,13 @@
 # My Blog
 
+</div>
+<br>
+<div align="center">
+ 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d2da763f-17f7-4fe4-9013-7b76224438ea/deploy-status)](https://app.netlify.com/sites/federicagazzelloni/deploys)
+
+</div>
+
 ✍🏻 https://federicagazzelloni.netlify.app/
 
 If you'd like to build **your own blog** please follow the instruction here: https://github.com/ivelasq/2022-01-25_building-a-blog-with-r
