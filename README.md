@@ -10,6 +10,9 @@
 
 ✍🏻 https://federicagazzelloni.netlify.app/
 
+---
+
+
 If you'd like to build **your own blog** please follow the instruction here: https://github.com/ivelasq/2022-01-25_building-a-blog-with-r
 
 ```r
@@ -33,3 +36,6 @@ Once you have made your modifications in **R**, then **pull**, **commit** and **
 Your site is ready, go to **netlify.com** open an account, and add a new site linking your **GitHub** blog repo.
 
 ### Your new blog is online!
+
+---
+
