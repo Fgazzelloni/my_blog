@@ -6,7 +6,16 @@
     <description>Recent content in Blog posts on Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>European flights</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/european_flights/</link>
+      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/european_flights/</guid>
+      <description>Overview test     This #TidyTuesday week 28 is all about European flights. I was looking for a visualization that would represent the differences among countries in terms of the number of airports versus number of flights. I looked on the internet for getting some inspiration and then landed on Pintarest, where I found exactly what I was hoping for: a Sankey! First of all, What is a Sankey?</description>
+    </item>
+    
     <item>
       <title>Statistics</title>
       <link>https://federicagazzelloni.netlify.app/blog/data_visualization/statistics/</link>

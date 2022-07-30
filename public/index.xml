@@ -6,7 +6,16 @@
     <description>Recent content in Federica Gazzelloni on Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federicagazzelloni.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>European flights</title>
+      <link>https://federicagazzelloni.netlify.app/blog/data_visualization/european_flights/</link>
+      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/blog/data_visualization/european_flights/</guid>
+      <description>Overview test     This #TidyTuesday week 28 is all about European flights. I was looking for a visualization that would represent the differences among countries in terms of the number of airports versus number of flights. I looked on the internet for getting some inspiration and then landed on Pintarest, where I found exactly what I was hoping for: a Sankey! First of all, What is a Sankey?</description>
+    </item>
+    
     <item>
       <title>Predictive modeling</title>
       <link>https://federicagazzelloni.netlify.app/project/projects/tidymodels/</link>
@@ -18,21 +27,12 @@ The Caret package is the starting point for understanding how to manage models a
     </item>
     
     <item>
-      <title>Set up your projects</title>
-      <link>https://federicagazzelloni.netlify.app/project/projects/projects_set_up/</link>
-      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://federicagazzelloni.netlify.app/project/projects/projects_set_up/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Multiple Hypothesis Testing</title>
       <link>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</link>
       <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://federicagazzelloni.netlify.app/technique/techniques/multiple_testing/</guid>
-      <description>Overview     Multiple testing a mistery explained.
+      <description>Overview     Multiple testing, what does it means?
 Sometimes answering a research question means evaluating the different combinations of predictors, and this is the case when multiple hypothesis testing is made.
 The following are the fundamental steps for understanding how to proceed when multiple hypothesis testing is needed.
 Image credits: Hypothesis Testing On Linear Regression-medium.com
