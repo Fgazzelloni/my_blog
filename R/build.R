@@ -7,4 +7,4 @@
 # https://stackoverflow.com/questions/16288176/your-branch-is-ahead-of-origin-master-by-3-commits
 
 # on command line: git reset --hard origin
-# it will erase all the unwanted commits
+# it will erase all - better specify the commit number if it is just one commit
