@@ -48,8 +48,6 @@ Helpful tip is how to set the **dpi** option inside the `showtext::showtext_opts
 
 A perfect result comes from a nice balance trade-off between the **dpi** of the two functions.
 
----
-
 Let's have a look at the data, there are 100000 observation and 24 variables referring to the various types of yarns, companies, names, yardage, weights, textures, ratings, ...
 
 ```{r message=FALSE, warning=FALSE, comment="", paged.print=FALSE}
@@ -119,9 +117,7 @@ df <- yarn%>%
 df%>%head
 ```
 
-
 ### Shape the data for making the hierarchical edge bundling visualization.
-
 
 Now, for setting the data ready for being used inside one of the `{ggraph}` functions, a new vector is created named **YARN**. This is done to have a central point to all the yarns' types.
 
@@ -144,17 +140,17 @@ vertices <- data.frame(name = unique(c(as.character(hierarchy$from),
                                        as.character(hierarchy$to))) ) 
 ```
 
-
 Hierarchy:
+
 ```{r }
 hierarchy%>%head
 ```
 
 Vertices:
+
 ```{r }
 vertices%>%head
 ```
-
 
 Then create the graph and the layout with `graph_from_data_frame()` function.
 
@@ -172,6 +168,7 @@ ggraph(mygraph, layout = 'dendrogram', circular = T) +
   geom_edge_diagonal()+
   geom_node_point(color="navy",size=5)
 ```
+
 I can even `filter` the leafs out to point just the main nodes:
 
 ```{r message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -182,7 +179,6 @@ ggraph(mygraph, layout = 'dendrogram', circular = T) +
                   size=5)
 ```
 
-
 I like the circular type, and we can have a look at the inside calculation of the function with `create_layout()` specifying the type of layout as a **dendrogram**. It is a dataframe graph and it has the x, and y vectors, the leafs, and the names and other specifications.
 
 ```{r }
@@ -190,23 +186,22 @@ df1 <- create_layout(mygraph, layout = 'dendrogram')
 df1%>%class
 ```
 
-
 ```{r }
 df1%>%head()
 ```
 
 To add the labels to the leafs they would need to be oriented by a specific angle level, the reason for this is that the subgroups are not all the same.
 
-What is needed is a function for node angle adjustments and another similar function to adjust the horizontal distance of the text around the dendrogram. 
-Likely the {ggraph} package provides a function for calculating the angles of your data:
+What is needed is a function for node angle adjustments and another similar function to adjust the horizontal distance of the text around the dendrogram. Likely the {ggraph} package provides a function for calculating the angles of your data:
 
     - node_angle(x,y)
-    
+
 ```{r }
 node_angle(df1$x,df1$y,degrees = T)%>%head()
 ```
-    
-These values need to be adjusted:    
+
+These values need to be adjusted:
+
 ```{r}
 node_ang_adj <- function(x,y) {
   ifelse(node_angle(x,y) > 90 & node_angle(x,y) < 270 , 
