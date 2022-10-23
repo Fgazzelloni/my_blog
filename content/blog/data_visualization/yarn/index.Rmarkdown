@@ -44,7 +44,7 @@ showtext::showtext_opts(dpi=320)
 font_add_google(name="Pangolin",family="pangolin")
 ```
 
-An helpful tip is how to set the **dpi** option inside the `showtext::showtext_opts` function. This sets the size of your text, and it can be very useful when used in conjunction with the same option inside the `ggsave` function. If `showtxet` dpi is of a certain value, then you should set the `ggsave` dpi lower than that value to balance the text size outcome in your final .png file.
+Helpful tip is how to set the **dpi** option inside the `showtext::showtext_opts` function. This sets the size of your text, and it can be very useful when used in conjunction with the same option inside the `ggsave` function. If `showtxet` dpi is of a certain value, then you should set the `ggsave` dpi lower than that value to balance the text size outcome in your final .png file.
 
 A perfect result comes from a nice balance trade-off between the **dpi** of the two functions.
 

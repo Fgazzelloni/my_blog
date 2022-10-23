@@ -18,3 +18,12 @@ blogdown::stop_server()
 # RSS feeds are in "public" folder
 # ????make sure ‘RSS’ is listed in our outputs within your config.toml file.
 # added the link to the blog site in the config.toml
+
+DEPLOYMENT
+# once pushed all changes 
+# Go to https://app.netlify.com/teams/federicagazzelloni/overview
+# then: https://app.netlify.com/teams/federicagazzelloni/builds
+# and choose the last deployment
+# clear cache and re-deploy
+
+
