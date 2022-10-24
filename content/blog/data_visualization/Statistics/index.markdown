@@ -12,9 +12,7 @@ layout: single
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval=FALSE,comment = "")
-```
+
 
 ## Overview
 
@@ -25,7 +23,8 @@ This is one of my favourite visualizations. It looks like very simple, and strai
 ![](featured.png)
 
 The Tidyverse libraries needed for the data manipulation:
-```{r lib1, eval=TRUE, message=FALSE, warning=FALSE, include=T, paged.print=FALSE}
+
+```r
 library(tidyverse)
 ```
 
@@ -33,19 +32,52 @@ library(tidyverse)
 The data set is the Wage dataset from the [{ISLR2}](https://www.statlearning.com/) package.
 This package contains a variety of datasets used for statistical analysis in An Introduction to Statistical Learning book.
 
-```{r data, eval= TRUE,message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```r
 library(ISLR2)
 data(Wage)
 wage_h <- Wage%>%group_by(education)%>%summarize(avg_wage=mean(wage))
 kableExtra::kable(wage_h,row.names = F)
 ```
 
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> education </th>
+   <th style="text-align:right;"> avg_wage </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1. &lt; HS Grad </td>
+   <td style="text-align:right;"> 84.10441 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2. HS Grad </td>
+   <td style="text-align:right;"> 95.78335 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3. Some College </td>
+   <td style="text-align:right;"> 107.75557 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4. College Grad </td>
+   <td style="text-align:right;"> 124.42791 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5. Advanced Degree </td>
+   <td style="text-align:right;"> 150.91778 </td>
+  </tr>
+</tbody>
+</table>
+
 #### Data Wrangling
 
 A bit of data wrangling to group by education and calculate the mean value and the standard deviation of the wage.
 
 <details>
-```{r rank-set}
+
+```r
 Wage1 <- Wage %>%
   mutate(education=gsub("\\d. ","",education)) %>% #count(year)
   group_by(education)%>%
@@ -62,7 +94,8 @@ Wage1 <- Wage %>%
 
 #### Set some extrafonts:
 
-```{r fonts, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```r
 library(extrafont)
 # loadfonts()
 ```
@@ -75,13 +108,15 @@ For this visualization I used: family = "Chelsea Market"
 - ggdist::stat_dots to make the dots ditribution
 - distributional::dist_normal to normalize the data
 
-```{r lib2, message=FALSE, warning=FALSE, include=T, paged.print=FALSE}
+
+```r
 library(ggdist)
 library(distributional)
 ```
 
 
-```{r plot, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```r
 Wage1 %>%
 ggplot(aes(y=fct_reorder(education,mean),
              xdist = dist_normal(mean, sd),
@@ -109,7 +144,8 @@ ggplot(aes(y=fct_reorder(education,mean),
 ```
 
 If you'd like to save it as .png you can do it with `ggsave()`
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=T, paged.print=FALSE}
+
+```r
 ggsave("day9_statistics_v2.png",
        dpi=320,
        width = 9,
