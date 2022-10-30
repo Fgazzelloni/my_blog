@@ -25,5 +25,8 @@ DEPLOYMENT
 # then: https://app.netlify.com/teams/federicagazzelloni/builds
 # and choose the last deployment
 # clear cache and re-deploy
+# if that doesn't work might be needed to re-build the book from RStudio 
+# and cleaning everything 
+# then pushing changes to the log again and repeat the builds clear cache ...
 
 

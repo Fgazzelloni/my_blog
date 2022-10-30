@@ -16,7 +16,7 @@ layout: single
 
 
 
-## Predictive modeling
+## Overview
 
 This post is dedicated to make a comparison between **Caret** and **TidyModels** R packages. Data modeling with R pass through data preprocessing and parameters assessments to predicting an outcome.
 Both set of packages can be used to acheive same results, with the purpose of finding the best predictive performance for data specifc models.
