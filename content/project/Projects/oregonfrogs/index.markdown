@@ -1,7 +1,7 @@
 ---
 title: "Oregon spotted a frog: Rana Pretiosa"
 excerpt: "Machine Learning with mlr3"
-date: 
+date: "2022-10-30"
 author: "Federica Gazzelloni"
 draft: false
 images:
@@ -195,7 +195,7 @@ Mtry:                             3
 Target node size:                 10 
 Variable importance mode:         none 
 Splitrule:                        gini 
-OOB prediction error (Brier s.):  0.1483088 
+OOB prediction error (Brier s.):  0.1488245 
 ```
 
 
@@ -208,7 +208,7 @@ prediction$score(measure)
 
 ```
 classif.acc 
-  0.9549839 
+  0.9517685 
 ```
 
 
@@ -220,9 +220,9 @@ prediction$confusion
 ```
                truth
 response        Deep water No water Shallow water Unknown water
-  Deep water            75        0             6             0
+  Deep water            75        0             7             0
   No water               0       10             0             0
-  Shallow water          5        2           194             0
+  Shallow water          5        2           193             0
   Unknown water          1        0             0            18
 ```
 
