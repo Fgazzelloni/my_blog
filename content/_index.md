@@ -1,6 +1,6 @@
 ---
 title: Federica Gazzelloni
-subtitle: Here you'll find all about my on going projects
+subtitle: Statistician - Actuary - Data Scientist
 description: I've always loved maths and science, I meant to be a Veterinary, I wanted to do ballet classes, teach gymnastic, be an economist, a psychologist... Many years passed since I started the journey of my career as an investigator, it turned out to be an everyday challenge with tasks to solve, and most importantly a continuous learning path.
 images:
 - profile_pic.png
