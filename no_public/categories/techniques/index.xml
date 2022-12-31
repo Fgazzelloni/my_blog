@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Techniques on Federica Gazzelloni</title>
+    <link>https://federicagazzelloni.netlify.app/categories/techniques/</link>
+    <description>Recent content in Techniques on Federica Gazzelloni</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://federicagazzelloni.netlify.app/categories/techniques/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statistical Techniques</title>
+      <link>https://federicagazzelloni.netlify.app/technique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/technique/</guid>
+      <description>&amp;hellip; and some modeling </description>
+    </item>
+    
+  </channel>
+</rss>

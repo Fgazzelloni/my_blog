@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/contact/</loc>
+    <lastmod>2019-02-25T13:38:41-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/contributors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/license/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/categories/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/project/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/series/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/technique/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://federicagazzelloni.netlify.app/categories/techniques/</loc>
+  </url>
+  
+</urlset>

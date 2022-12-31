@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Federica Gazzelloni</title>
+    <link>https://federicagazzelloni.netlify.app/</link>
+    <description>Recent content on Federica Gazzelloni</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://federicagazzelloni.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contact</title>
+      <link>https://federicagazzelloni.netlify.app/contact/</link>
+      <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/contact/</guid>
+      <description>Please use the my socials for any questions:
+  GithHub repo  LinkedIn  Twitter  </description>
+    </item>
+    
+    <item>
+      <title>Contributors</title>
+      <link>https://federicagazzelloni.netlify.app/contributors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/contributors/</guid>
+      <description>Thank you to all the folks who have contributed both technical and creative skills to this project, please make suggestions by submitting an issue:
+  GithHub repo  </description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://federicagazzelloni.netlify.app/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://federicagazzelloni.netlify.app/license/</guid>
+      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.
+  </description>
+    </item>
+    
+  </channel>
+</rss>
